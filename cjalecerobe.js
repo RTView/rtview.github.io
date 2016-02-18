@@ -2,7 +2,7 @@ var CONFIG = (function()
 {
 	var private =
     {
-    	'ANTIALIASING': false,
+    	'ANTIALIASING': true,
     	'STENCIL': false,
         'FOV_Y': 60.0,
         'NEAR_PLANE': 0.1,

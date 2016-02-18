@@ -1,1 +1,1 @@
-# BRDFExplorer
+# RTViewer

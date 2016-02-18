@@ -3,7 +3,7 @@
 	[
 		{
 			"name": "Studio Fotografico",
-			"dir": "studio",
+			"dir": "studio2",
 			"extension": "jpg",
 			"default": true
 		},
