@@ -67,6 +67,7 @@ function init()
 
 	normal_map = THREE.ImageUtils.loadTexture("img/diatom_normal.png");
 
+	initPlane();
 	initGUI();
 	initStats();
 	initMaterial();
@@ -76,6 +77,18 @@ function init()
 	loadModels();
 
 	render();
+}
+
+function initPlane()
+{
+	model_loader.load(CONFIG.get('MODEL_DIR') + "plane.json", function(obj)
+	{
+		obj.position.set(0.0, -0.5, 0.0);
+		obj.scale.set(0.01, 0.01, 0.01);
+		scene.add(obj);
+		var tex = THREE.ImageUtils.loadTexture("img/plane.png");
+		obj.children[0].children[0].material = new THREE.MeshBasicMaterial({map: tex});
+	});
 }
 
 function initGUI()
@@ -283,19 +296,6 @@ function initSkybox()
 
 	skybox = new THREE.Mesh(new THREE.BoxGeometry(500, 500, 500), materialSkyBox);
 	scene.add(skybox);
-
-	/*
-	plane = new THREE.Mesh(new THREE.PlaneBufferGeometry(200, 200), new THREE.MeshPhongMaterial({ color: 0xdddddd, specular: 0xffffff, shininess: 100 }));
-	plane.geometry.computeFaceNormals();
-	plane.geometry.computeVertexNormals();
-	plane.rotation.set(-Math.PI / 2.0, 0.0, 0.0);
-	plane.position.set(0.0, -0.5, 0.0);
-	scene.add(plane);
-
-	light = new THREE.DirectionalLight(0xffffff, 1.0);
-	light.position.set(50.0, 50.0, 50.0);
-	scene.add(light);
-	*/
 }
 
 function loadShaders()
