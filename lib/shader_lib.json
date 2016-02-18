@@ -1,0 +1,49 @@
+{
+	"vertex_shader": "base_vertex.vs",
+	"fragment_shader": "base_fragment.fs",
+	"chunks":
+	{
+		"diffuse":
+		[
+			{
+				"name": "Burley",
+				"path": "diffuse.burley.fs",
+				"default": true
+			}
+		],
+		"distribution":
+		[
+			{
+				"name": "GGX",
+				"path": "distribution.GGX.fs",
+				"default": true
+			}
+		],
+		"shadowing":
+		[
+			{
+				"name": "Smith-GGX",
+				"path": "shadowing.smith_ggx.fs",
+				"default": true
+			}
+		],
+		"fresnel":
+		[
+			{
+				"name": "Schlick",
+				"path": "fresnel.schlick.fs",
+				"default": true
+			}
+		],
+		"roughness_remap":
+		[
+			{
+				"name": "Crytek",
+				"path": "remap.crytek.fs",
+				"default": true
+			}
+		]
+	},
+	"fragment_stub": "fragment_stub.fs",
+	"common": "common.fs"
+}
