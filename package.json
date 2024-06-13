@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@arcware-cloud/pixelstreaming-websdk": "^0.1.10"
+  }
+}
