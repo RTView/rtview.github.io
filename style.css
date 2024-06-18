@@ -84,3 +84,46 @@ body {
     cursor: pointer;
 }
 
+#olivia:hover {
+    background-image: url(Images/OliviaBG.png);
+}
+
+#sabbia:hover {
+    background-image: url(Images/sabbiaBG.png);
+}
+
+#blu:hover {
+    background-image: url(Images/bluBG.png);
+}
+
+#carminio:hover {
+    background-image: url(Images/carminioBG.png);
+}
+
+#frassino:hover {
+    background-image: url(Images/frassinoBG.png);
+}
+
+#nocecanaletto:hover {
+    background-image: url(Images/nocecanaletto.png);
+}
+
+#opablack:hover {
+    background-image: url(Images/blackBG.png);
+}
+
+#orange:hover {
+    background-image: url(Images/redBG.png);
+}
+
+#white:hover {
+    background-image: url(Images/whiteBG.png);
+}
+
+#black:hover {
+    background-image: url(Images/blackBG.png);
+}
+
+
+
+
