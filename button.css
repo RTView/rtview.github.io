@@ -1,5 +1,3 @@
-
-
 .container {
     position: relative;
     width: 100%;
@@ -8,19 +6,80 @@
     z-index: 9;
 }
 
-.main-buttons {
-    position: absolute;
-    bottom: 20px;
+.product-details {
     display: flex;
+    flex-direction: column;
     gap: 20px;
 }
 
-.button-group {
-    position: absolute;
-    bottom: 80px;
+.option {
+    position: relative;
+}
+
+.option label {
+    display: block;
+    width: 150px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 5px;
+}
+
+.option label:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.dropdown-content {
     display: none;
-    flex-direction: column;
-    gap: 10px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f1f1f1;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    width: max-content;
+    padding: 10px;
+}
+
+.dropdown-content h3, .dropdown-content p {
+    color: #333;
+}
+
+.dropdown-content button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #e7f0fd;
+    color: #333;
+    cursor: pointer;
+    text-align: left;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.dropdown-content button:hover {
+    background-color: #d0e4fb;
+}
+
+.dropdown-content button:last-child {
+    margin-bottom: 0;
+}
+
+.button-interaction {
+    position: absolute;
+    width: 200px;
+    right: 100px;
+    bottom: 20px;
+    margin: auto;
+    z-index: 9;
 }
 
 .option-button {
@@ -33,6 +92,10 @@
     transition: transform 0.3s ease, opacity 0.3s ease;
     opacity: 0;
     transform: translateY(20px);
+    border-radius: 5px;
+    background-image: url('path_to_image.jpg'); /* Inserisci il percorso dell'immagine qui */
+    background-size: cover;
+    background-position: center;
 }
 
 .option-button.show {

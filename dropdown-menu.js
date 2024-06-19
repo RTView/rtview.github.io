@@ -15,6 +15,3 @@ function toggleDropdown(id) {
     }
 }
 
-function addToCart() {
-    alert("Added to cart");
-}
