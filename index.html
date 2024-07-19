@@ -41,7 +41,7 @@
 
       const initResult = new ArcwareInit(
         {
-          shareId: "share-e755da42-dc56-4e46-8306-8edf3578d62c"
+          shareId: "share-e755da42-dc56-4e46-8306-8edf3578d62cprova"
         },
         {
           initialSettings: {
@@ -95,7 +95,7 @@
           <button id="carminio" onclick="handleSendCommand({firstmaterial: 'Carminio'}); selectMaterial('first', 'Carminio')">Carminio</button>
           <h3>Secondo Materiale</h3>
           <button id="frassino" onclick="handleSendCommand({secondmaterial: 'Frassino'}); selectMaterial('second', 'Frassino')">Frassino</button>
-          <button id="nocecanaletto" onclick="handleSendCommand({secondmaterial: 'NoceCanaletto'}); selectMaterial('fsecond', 'MoceCanaletto')">NoceCanaletto</button>
+          <button id="nocecanaletto" onclick="handleSendCommand({secondmaterial: 'NoceCanaletto'}); selectMaterial('second', 'NoceCanaletto')">NoceCanaletto</button>
         </div>
       </div>
       <div class="option">
@@ -135,7 +135,7 @@
           <button onclick="handleSendCommand({light: '0'})">On/Off</button>
         </div>
       </div>
-      <div id="total-price">Prezzo Totale: &euro; <span id="price-value">0.00</span></div>
+      <div id="total-price">Prezzo Totale: &euro;<span id="price-value">0.00</span></div>
     </div> 
   </div>
   <script src="dropdown-menu.js"></script>

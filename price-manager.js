@@ -32,7 +32,11 @@ let secondMaterial = '';
 
 //Selezione del Modello
 function selectModel(model) {
-    selectedModel = model;
+    if(selectedModel == model) {
+        selectedModel = '';
+    } else {
+        selectedModel = model;
+    }
     firstMaterial = '';
     secondMaterial = '';
     updatePrice();
