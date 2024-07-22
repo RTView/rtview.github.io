@@ -27,7 +27,6 @@ body {
 }
 
 .product-details {
-    align-items: center;
     flex: 2; /* 30% */
     padding: 20px;
     background-color: white;
