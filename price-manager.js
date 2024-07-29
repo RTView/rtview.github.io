@@ -28,6 +28,7 @@ const materialPrices = {
 let selectedModel = '';
 let firstMaterial = '';
 let secondMaterial = '';
+let totalPrice = '0.00';
 
 
 //Selezione del Modello
@@ -54,7 +55,7 @@ function selectMaterial(type, material) {
 
 //Aggiornamento del prezzo
 function updatePrice() {
-    let totalPrice = modelPrices[selectedModel] || 0;
+    totalPrice = modelPrices[selectedModel] || 0;
 
   if (firstMaterial) {
     totalPrice += materialPrices.first[firstMaterial] || 0;

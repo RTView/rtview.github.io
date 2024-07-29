@@ -77,6 +77,15 @@
       }
     };
   </script>
+  <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+  <script type="text/javascript">
+    (function(){
+      emailjs.init({
+      publicKey: "jGMKHf6zzHbt_y34H",});
+    })();
+  </script>
 </head>
 
 <body>
@@ -135,11 +144,19 @@
           <button onclick="handleSendCommand({light: '0'})">On/Off</button>
         </div>
       </div>
-      <div id="total-price">Prezzo Totale: &euro;<span id="price-value">0.00</span></div>
+      <div id="total-price">Prezzo Totale*: &euro;<span id="price-value">0.00</span></div>
+      <div>
+        <input type="text" id="fullName" placeholder="Full Name" required /><br />
+        <input type="email" id="email_id" placeholder="Email Id" required /><br />
+        <textarea placeholder="Message" id="message" required></textarea><br />
+        <button onclick="SendMail()">Send</button>
+      </div>
+      <div id="note">*I prezzi riportati sono indicativi</div>
     </div> 
   </div>
   <script src="dropdown-menu.js"></script>
   <script src="price-manager.js"></script>
+  <script src="mail-manager.js"></script>
 </body>
 </html>
 
