@@ -1,92 +1,37 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>RTVIEW - LIGHT-CONFIGURATOR</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-    }
-    #video-container {
-      width: 100%;
-      height: 100%;
-      position: relative;
-    }
-    #video-container video {
-      left: 0;
-      top: 0;
-    }
-    .button-interaction {
-      position: absolute;
-      width: 200px;
-      right: 100px;
-      bottom: 20px;
-      margin: auto;
-      z-index: 9;
-    }
-  </style>
-  <script type="module">
-    let Application;
-    import * as PixelStreamingWebSdk from "https://unpkg.com/@arcware-cloud/pixelstreaming-websdk@latest/index.esm.js";
-    (() => {
-      const { ArcwareInit } = PixelStreamingWebSdk;
-
-      const testInteraction = {
-        type: 'interact',
-        payload: {
-          changematerial: '0'
-        }
-      };
-
-      const initResult = new ArcwareInit(
-        {
-          shareId: "share-0739295d-e852-4408-901f-65b66fc8eae9"
-        },
-        {
-          initialSettings: {
-            StartVideoMuted: true,
-            AutoConnect: true,
-            AutoPlayVideo: true
-          },
-          settings: {
-            infoButton: false,
-            micButton: false,
-            audioButton: false,
-            fullscreenButton: false,
-            settingsButton: false,
-            connectionStrengthIcon: true
-          },
-        }
-      );
-
-      Application = initResult.Application;
-      Application.getApplicationResponse(
-        (response) => console.log("ApplicationResponse", response)
-      );
-
-      setTimeout(() =>
-        document
-          .getElementById("video-container")
-          .appendChild(Application.rootElement)
-      );
-    })();
-    window.handleSendCommand = function(command) {
-      if (Application) {
-        Application.emitUIInteraction(command);
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RTVIEW - LIGHT-CONFIGURATOR</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
       }
-    };
-  </script>
-  <script type="text/javascript"
-    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-  </script>
-  <script type="text/javascript">
-    (function(){
-      emailjs.init({
-      publicKey: "jGMKHf6zzHbt_y34H",});
-    })();
-  </script>
-</head>
+      #video-container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
+      #video-container video {
+        left: 0;
+        top: 0;
+      }
+      .button-interaction {
+        position: absolute;
+        width: 200px;
+        right: 100px;
+        bottom: 20px;
+        margin: auto;
+        z-index: 9;
+      }
+    </style>
+    <script type="module" src="host-init.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript" src="mail-init.js"></script>
+  </head>
 
 <body>
   <div class="container">
