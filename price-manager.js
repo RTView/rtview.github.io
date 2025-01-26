@@ -3,7 +3,9 @@ const modelPrices = {
     Sedia00: 100,
     Sedia01: 110,
     Giacca00: 150,
-    Lampada00: 50
+    Lampada00: 50,
+    Beba00: 100,
+    TavoloDiamante00: 150
 };
 
  //Prezzo Materiali
@@ -13,14 +15,28 @@ const materialPrices = {
         Sabbia: 20,
         Blu: 30,
         Carminio: 40,
+        NoceCanaletto: 20,
+        OpaBlack: 30,
+        Bianco: 40,
         Orange: 10,
         White: 15,
-        Black: 20
+        Black: 20,
+        Seduta: 30,
+        Schienale: 20
     },
     second: {
         Frassino: 10,
         NoceCanaletto: 20,
-        OpaBlack: 30
+        OpaBlack: 30,
+        Bianco: 40,
+        Seduta: 30,
+        Schienale: 20
+    },
+    third: {
+        Salvia: 20,
+        Blu: 30,
+        Salmone: 40,
+        Marrone: 20
     }
 };
 
@@ -28,6 +44,7 @@ const materialPrices = {
 let selectedModel = '';
 let firstMaterial = '';
 let secondMaterial = '';
+let thirdMaterial = '';
 let totalPrice = '0.00';
 
 
@@ -40,6 +57,7 @@ function selectModel(model) {
     }
     firstMaterial = '';
     secondMaterial = '';
+    thirdMaterial = '';
     updatePrice();
 }
 
@@ -49,6 +67,8 @@ function selectMaterial(type, material) {
         firstMaterial = material;
     } else if (type === 'second') {
         secondMaterial = material;
+    } else if (type === 'third') {
+        thirdMaterial = material;
     }
     updatePrice();
 }
@@ -63,6 +83,10 @@ function updatePrice() {
 
   if (secondMaterial) {
     totalPrice += materialPrices.second[secondMaterial] || 0;
+  }
+
+  if (thirdMaterial) {
+    totalPrice += materialPrices.third[thirdMaterial] || 0;
   }
 
   document.getElementById('price-value').textContent = totalPrice.toFixed(2);      
