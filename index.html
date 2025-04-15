@@ -38,9 +38,15 @@
     <div class="product-view">
       <div id="video-container"></div>
     </div>
-    <div class="product-details">
+      <div class="product-details">
+        <!-- Contenitore per i bottoni affiancati -->
+        <div style="display: flex; gap: 10px; margin-top: 20px;">
+        <button type="button" onclick="handleSendCommand({changespot: '0'})">Slot1</button>
+        <button type="button" onclick="handleSendCommand({changespot: '1'})">Slot2</button>
+        <button type="button" onclick="handleSendCommand({changespot: '2'})">Slot3</button>
+      </div>
       <div class="option">
-        <label onclick="toggleDropdown('tavolodiamante'); handleSendCommand({changemesh: 'TavoloDiamante00'}); selectModel('TavoloDiamante00')">Tavolo Diamante</label>
+        <label onclick="toggleDropdown('tavolodiamante'); handleSendCommand({changemesh: 'TavoloDiamante00'}); selectModel('TavoloDiamante00')">Tavolo Diamante-Slot1</label>
         <div id="tavolodiamante" class="dropdown-content">
           <h3>Primo Materiale</h3>
           <button id="nocecanaletto" onclick="handleSendCommand({firstmaterial: 'NoceCanaletto'}); selectMaterial('first', 'NoceCanaletto')">Noce Canaletto</button>
@@ -52,12 +58,12 @@
           <button id="schienale" onclick="handleSendCommand({secondmaterial: 'Bianco'}); selectMaterial('second', 'Bianco')">Bianco</button>
           <h3>Terzo Materiale</h3>
           <button id="salvia" onclick="handleSendCommand({thirdmaterial: 'Salvia'}); selectMaterial('third', 'Salvia')">Salvia</button>
-          <button id="blu" onclick="handleSendCommand({thirdmaterial: 'Blu'}); selectMaterial('third', 'Marrone')">Marrone</button>
-          <button id="carminio" onclick="handleSendCommand({thirdmaterial: 'Salmone'}); selectMaterial('third', 'Blu')">Blu</button>
+          <button id="blu" onclick="handleSendCommand({thirdmaterial: 'Marrone'}); selectMaterial('third', 'Marrone')">Marrone</button>
+          <button id="carminio" onclick="handleSendCommand({thirdmaterial: 'Salmone'}); selectMaterial('third', 'Blu')">Salmone</button>
         </div>
       </div>
       <div class="option">
-        <label onclick="toggleDropdown('bebacurvy'); handleSendCommand({changemesh: 'Beba00'}); selectModel('Beba00')">Beba Curvy</label>
+        <label onclick="toggleDropdown('bebacurvy'); handleSendCommand({changemesh: 'Beba00'}); selectModel('Beba00')">Beba Curvy-Slot3</label>
         <div id="bebacurvy" class="dropdown-content">
           <h3>Primo Materiale</h3>
           <button id="seduta" onclick="handleSendCommand({firstmaterial: 'ClothSeduta'}); selectMaterial('first', 'Seduta')">Seduta</button>
@@ -72,7 +78,22 @@
         </div>
       </div>
       <div class="option">
-        <label onclick="toggleDropdown('sedia00'); handleSendCommand({changemesh: 'Sedia00'}); selectModel('Sedia00')">POUF-D</label>
+        <label onclick="toggleDropdown('fivecurvy'); handleSendCommand({changemesh: 'FiveCurvy'}); selectModel('Beba00')">Sedie Multiple-Slot3</label>
+        <div id="fivecurvy" class="dropdown-content">
+          <h3>Primo Materiale</h3>
+          <button id="seduta" onclick="handleSendCommand({firstmaterial: 'ClothSeduta'}); selectMaterial('first', 'Seduta')">Seduta</button>
+          <button id="schienale" onclick="handleSendCommand({firstmaterial: 'ClothSchienale'}); selectMaterial('first', 'Schienale')">Schienale</button>
+          <h3>Secondo Materiale</h3>
+          <button id="seduta" onclick="handleSendCommand({secondmaterial: 'ClothSeduta'}); selectMaterial('second', 'Seduta')">Seduta</button>
+          <button id="schienale" onclick="handleSendCommand({secondmaterial: 'ClothSchienale'}); selectMaterial('second', 'Schienale')">Schienale</button>
+          <h3>Terzo Materiale</h3>
+          <button id="salvia" onclick="handleSendCommand({thirdmaterial: 'Salvia'}); selectMaterial('third', 'Seduta')">Salvia</button>
+          <button id="blu" onclick="handleSendCommand({thirdmaterial: 'Blu'}); selectMaterial('third', 'Schienale')">Blu</button>
+          <button id="carminio" onclick="handleSendCommand({thirdmaterial: 'Salmone'}); selectMaterial('third', 'Schienale')">Salmone</button>
+        </div>
+      </div>
+      <div class="option">
+        <label onclick="toggleDropdown('sedia00'); handleSendCommand({changemesh: 'Sedia00'}); selectModel('Sedia00')">POUF-D-Slot2</label>
         <div id="sedia00" class="dropdown-content">
           <h3>Materiale</h3>
           <button id="olivia" onclick="handleSendCommand({firstmaterial: 'Olivia'}); selectMaterial('first', 'Olivia')">Olivia</button>
@@ -85,7 +106,7 @@
         </div>
       </div>
       <div class="option">
-        <label onclick="toggleDropdown('sedia01'); handleSendCommand({changemesh: 'Sedia01'}); selectModel('Sedia01')">D-UFFLE</label>
+        <label onclick="toggleDropdown('sedia01'); handleSendCommand({changemesh: 'Sedia01'}); selectModel('Sedia01')">D-UFFLE-Slot1</label>
         <div id="sedia01" class="dropdown-content">
           <h3>Materiale</h3>
           <button id="olivia" onclick="handleSendCommand({firstmaterial: 'Olivia'}); selectMaterial('first', 'Olivia')">Olivia</button>
@@ -98,7 +119,7 @@
         </div>
       </div>
       <div class="option">
-        <label onclick="toggleDropdown('giacca'); handleSendCommand({changemesh: 'Giacca00'}); selectModel('Giacca00')">Eau Rogue</label>
+        <label onclick="toggleDropdown('giacca'); handleSendCommand({changemesh: 'Giacca00'}); selectModel('Giacca00')">Eau Rogue-Slot3</label>
         <div id="giacca" class="dropdown-content">
           <h3>Primo Materiale</h3>
           <button id="olivia" onclick="handleSendCommand({firstmaterial: 'Olivia'}); selectMaterial('first', 'Olivia')">Metal Blu</button>
